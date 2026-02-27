@@ -4,415 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marissa Gates — Instructional Designer</title>
-<meta name="description" content="Instructional design portfolio featuring compliance training simulations, eLearning development, and educational technology.">
+<meta name="description" content="Instructional design portfolio — scenario-based eLearning, compliance simulations, blended training, and measurable learning outcomes. Articulate 360, Camtasia, SCORM, WCAG.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #FAF8F4;
-    --warm-white: #F5F2ED;
-    --sand: #E8E2D8;
-    --charcoal: #2A2A2A;
-    --medium: #5A5A5A;
-    --light-text: #8A8580;
-    --accent: #8B4A3C;
-    --accent-light: #B06E5F;
-    --accent-pale: #F0E6E3;
-    --deep: #1A1A1A;
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; font-size: 16px; }
-  body {
-    font-family: var(--sans);
-    background: var(--cream);
-    color: var(--charcoal);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  ::selection { background: var(--accent-pale); color: var(--accent); }
-
-  /* ===================== NAV ===================== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 20px 48px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(250,248,244,0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s, padding 0.3s;
-  }
-  nav.scrolled { border-bottom-color: var(--sand); padding: 14px 48px; }
-  .nav-name {
-    font-family: var(--serif); font-size: 20px; color: var(--charcoal);
-    text-decoration: none; letter-spacing: -0.02em;
-  }
-  .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a {
-    font-size: 14px; font-weight: 500; color: var(--medium);
-    text-decoration: none; letter-spacing: 0.02em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-contact {
-    font-size: 13px !important; font-weight: 600 !important;
-    color: var(--accent) !important;
-    padding: 8px 20px; border: 1.5px solid var(--accent);
-    border-radius: 24px; transition: all 0.2s !important;
-  }
-  .nav-contact:hover { background: var(--accent) !important; color: #fff !important; }
-
-  /* ===================== HERO ===================== */
-  .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto;
-  }
-  .hero-content { max-width: 720px; }
-  .hero-tag {
-    font-size: 13px; font-weight: 600; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .hero-tag::before {
-    content: ''; width: 32px; height: 2px; background: var(--accent);
-  }
-  .hero h1 {
-    font-family: var(--serif); font-size: clamp(40px, 5.5vw, 64px);
-    line-height: 1.1; letter-spacing: -0.03em; color: var(--deep);
-    margin-bottom: 28px;
-  }
-  .hero h1 em {
-    font-style: italic; color: var(--accent);
-  }
-  .hero-description {
-    font-size: 18px; line-height: 1.8; color: var(--medium);
-    max-width: 560px; margin-bottom: 40px;
-  }
-  .hero-cta { display: flex; gap: 16px; align-items: center; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px; background: var(--accent); color: #fff;
-    border: none; border-radius: 8px; font-family: var(--sans);
-    font-size: 15px; font-weight: 600; cursor: pointer;
-    text-decoration: none; transition: all 0.25s;
-  }
-  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,74,60,0.2); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px; background: transparent; color: var(--charcoal);
-    border: 1.5px solid var(--sand); border-radius: 8px;
-    font-family: var(--sans); font-size: 15px; font-weight: 600;
-    cursor: pointer; text-decoration: none; transition: all 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--charcoal); }
-
-  /* ===================== SECTION BASICS ===================== */
-  section { padding: 100px 48px; }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
-  .section-label {
-    font-size: 13px; font-weight: 600; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .section-label::before {
-    content: ''; width: 24px; height: 2px; background: var(--accent);
-  }
-  .section-title {
-    font-family: var(--serif); font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.15; letter-spacing: -0.02em; color: var(--deep);
-    margin-bottom: 20px;
-  }
-  .section-subtitle {
-    font-size: 17px; color: var(--medium); max-width: 600px;
-    line-height: 1.7; margin-bottom: 56px;
-  }
-
-  /* ===================== PROJECTS ===================== */
-  #projects { background: var(--warm-white); }
-
-  .project-showcase {
-    background: var(--deep); border-radius: 20px; overflow: hidden;
-    margin-bottom: 48px; position: relative;
-  }
-  .project-showcase-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    min-height: 520px;
-  }
-  .project-showcase-content {
-    padding: 56px 48px; display: flex; flex-direction: column; justify-content: center;
-  }
-  .project-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(176,110,95,0.2); color: var(--accent-light);
-    padding: 6px 14px; border-radius: 20px; font-size: 12px;
-    font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-    margin-bottom: 20px; width: fit-content;
-  }
-  .project-showcase-content h3 {
-    font-family: var(--serif); font-size: 36px; color: #fff;
-    line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em;
-  }
-  .project-showcase-content p {
-    font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7;
-    margin-bottom: 28px; max-width: 440px;
-  }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-  .project-tag {
-    padding: 5px 12px; border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 4px; font-size: 12px; color: rgba(255,255,255,0.5);
-    font-weight: 500;
-  }
-  .project-showcase-visual {
-    background: var(--charcoal); display: flex; align-items: center;
-    justify-content: center; position: relative; overflow: hidden;
-  }
-  .project-showcase-visual .placeholder {
-    color: rgba(255,255,255,0.15); font-size: 14px; text-align: center;
-    padding: 40px;
-  }
-  .project-showcase-visual .placeholder .icon { font-size: 48px; margin-bottom: 12px; }
-  .btn-light {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 24px; background: #fff; color: var(--deep);
-    border: none; border-radius: 8px; font-family: var(--sans);
-    font-size: 14px; font-weight: 600; cursor: pointer;
-    text-decoration: none; transition: all 0.25s; width: fit-content;
-  }
-  .btn-light:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-
-  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .project-card {
-    background: #fff; border-radius: 16px; overflow: hidden;
-    border: 1px solid var(--sand); transition: all 0.3s;
-  }
-  .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-  .project-card-visual {
-    height: 240px; background: var(--sand); display: flex;
-    align-items: center; justify-content: center; position: relative; overflow: hidden;
-  }
-  .project-card-visual .placeholder {
-    color: var(--light-text); font-size: 13px; text-align: center;
-  }
-  .project-card-visual .placeholder .icon { font-size: 36px; margin-bottom: 8px; }
-  .project-card-content { padding: 28px; }
-  .project-card-content .project-type {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
-  }
-  .project-card-content h3 {
-    font-family: var(--serif); font-size: 22px; color: var(--deep);
-    margin-bottom: 10px; line-height: 1.25;
-  }
-  .project-card-content p {
-    font-size: 14px; color: var(--medium); line-height: 1.7;
-    margin-bottom: 20px;
-  }
-  .project-link {
-    font-size: 14px; font-weight: 600; color: var(--accent);
-    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-    transition: gap 0.2s;
-  }
-  .project-link:hover { gap: 10px; }
-
-  /* ===================== PROCESS (individual project pages) ===================== */
-  .process-section { background: #fff; }
-  .process-timeline { max-width: 720px; margin: 0 auto; }
-  .process-step {
-    display: flex; gap: 32px; margin-bottom: 48px;
-    padding-bottom: 48px; border-bottom: 1px solid var(--sand);
-  }
-  .process-step:last-child { border-bottom: none; margin-bottom: 0; }
-  .process-number {
-    font-family: var(--serif); font-size: 48px; color: var(--sand);
-    line-height: 1; flex-shrink: 0; width: 64px;
-  }
-  .process-step h4 {
-    font-family: var(--serif); font-size: 22px; margin-bottom: 12px;
-    color: var(--deep);
-  }
-  .process-step p { font-size: 15px; color: var(--medium); line-height: 1.8; }
-
-  /* ===================== ABOUT ===================== */
-  #about { background: #fff; }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px;
-    align-items: start;
-  }
-  .about-photo {
-    aspect-ratio: 3/4; background: var(--sand); border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--light-text); font-size: 14px; overflow: hidden;
-  }
-  .about-content h3 {
-    font-family: var(--serif); font-size: 32px; line-height: 1.2;
-    color: var(--deep); margin-bottom: 24px;
-  }
-  .about-content p {
-    font-size: 16px; color: var(--medium); line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  .about-details {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
-    margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--sand);
-  }
-  .about-detail-label {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
-  }
-  .about-detail-value { font-size: 15px; color: var(--charcoal); line-height: 1.5; }
-  .skills-list {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;
-  }
-  .skill-tag {
-    padding: 6px 14px; background: var(--accent-pale); color: var(--accent);
-    border-radius: 6px; font-size: 13px; font-weight: 500;
-  }
-
-  /* ===================== CONTACT ===================== */
-  #contact {
-    background: var(--deep); color: #fff; text-align: center;
-  }
-  #contact .section-label { justify-content: center; color: var(--accent-light); }
-  #contact .section-label::before { background: var(--accent-light); }
-  #contact .section-title { color: #fff; }
-  #contact .section-subtitle { color: rgba(255,255,255,0.5); margin-left: auto; margin-right: auto; }
-  .contact-links { display: flex; gap: 20px; justify-content: center; margin-top: 16px; }
-  .contact-link {
-    padding: 14px 28px; border: 1.5px solid rgba(255,255,255,0.2);
-    border-radius: 8px; color: #fff; text-decoration: none;
-    font-size: 15px; font-weight: 500; transition: all 0.2s;
-  }
-  .contact-link:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
-
-  /* ===================== FOOTER ===================== */
-  footer {
-    background: var(--deep); border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 24px 48px; text-align: center;
-    font-size: 13px; color: rgba(255,255,255,0.3);
-  }
-
-  /* ===================== PROJECT DETAIL PAGE ===================== */
-  .project-detail-hero {
-    padding: 160px 48px 80px; background: var(--deep); color: #fff;
-  }
-  .project-detail-hero .section-inner { max-width: 800px; }
-  .project-detail-hero h1 {
-    font-family: var(--serif); font-size: clamp(36px, 4.5vw, 52px);
-    line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em;
-  }
-  .project-detail-hero p { font-size: 18px; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 640px; }
-  .project-detail-meta {
-    display: flex; gap: 40px; margin-top: 36px; padding-top: 36px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .meta-item .meta-label {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent-light); margin-bottom: 4px;
-  }
-  .meta-item .meta-value { font-size: 14px; color: rgba(255,255,255,0.7); }
-
-  .project-writeup {
-    padding: 80px 48px; background: #fff;
-  }
-  .project-writeup .section-inner {
-    max-width: 760px; margin: 0 auto;
-  }
-  .project-writeup h2 {
-    font-family: var(--serif); font-size: 28px; color: var(--deep);
-    margin: 56px 0 20px; letter-spacing: -0.01em;
-  }
-  .project-writeup h2:first-child { margin-top: 0; }
-  .project-writeup p {
-    font-size: 16px; color: var(--medium); line-height: 1.85;
-    margin-bottom: 20px;
-  }
-  .project-embed {
-    margin: 48px 0; background: var(--warm-white); border-radius: 12px;
-    border: 1px solid var(--sand); overflow: hidden;
-  }
-  .project-embed .embed-placeholder {
-    height: 480px; display: flex; align-items: center; justify-content: center;
-    color: var(--light-text); font-size: 14px; text-align: center;
-  }
-  .project-embed .embed-placeholder .icon { font-size: 48px; margin-bottom: 12px; }
-
-  /* ===================== ANIMATIONS ===================== */
-  .fade-in {
-    opacity: 0; transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-  .fade-in-delay-1 { transition-delay: 0.1s; }
-  .fade-in-delay-2 { transition-delay: 0.2s; }
-  .fade-in-delay-3 { transition-delay: 0.3s; }
-
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
-    .nav-links { gap: 20px; }
-    section { padding: 72px 24px; }
-    .hero { padding: 100px 24px 60px; }
-    .project-showcase-inner { grid-template-columns: 1fr; }
-    .project-showcase-visual { min-height: 280px; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .about-photo { max-height: 400px; }
-    .project-detail-meta { flex-wrap: wrap; gap: 24px; }
-    footer { padding: 24px; }
-  }
-  @media (max-width: 600px) {
-    .nav-links a:not(.nav-contact) { display: none; }
-    .hero h1 { font-size: 36px; }
-    .hero-cta { flex-direction: column; align-items: flex-start; }
-    .about-details { grid-template-columns: 1fr; }
-    .contact-links { flex-direction: column; align-items: center; }
-  }
-
-  /* ===================== PAGE ROUTING ===================== */
-  .page { display: none; }
-  .page.active { display: block; }
+:root{--cream:#F7F3ED;--parchment:#F0EBE3;--linen:#EDE8DF;--sand:#D8D0C4;--espresso:#3C2415;--espresso-light:#5A3D2B;--medium:#6B5D52;--light-text:#9A8E82;--terracotta:#A0522D;--terracotta-light:#C06A3A;--terracotta-pale:#F3E8E0;--olive:#5C6B4F;--olive-pale:#E8EDE4;--deep:#2A1A0E;--warm-white:#FDFBF8;--serif:'Playfair Display',Georgia,serif;--sans:'Source Sans 3',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.7;-webkit-font-smoothing:antialiased}::selection{background:var(--terracotta-pale);color:var(--terracotta)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,243,237,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:border-color .3s,padding .3s}nav.scrolled{border-bottom-color:var(--sand);padding:14px 48px}.nav-name{font-family:var(--serif);font-size:20px;color:var(--espresso);text-decoration:none}.nav-links{display:flex;gap:32px;align-items:center}.nav-links a{font-size:14px;font-weight:500;color:var(--medium);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--terracotta)}.nav-contact{font-size:13px!important;font-weight:600!important;color:var(--terracotta)!important;padding:8px 20px;border:1.5px solid var(--terracotta);border-radius:24px;transition:all .2s!important}.nav-contact:hover{background:var(--terracotta)!important;color:#fff!important}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 48px 80px;max-width:1200px;margin:0 auto}.hero-content{max-width:720px}.hero-tag{font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--terracotta);margin-bottom:24px;display:flex;align-items:center;gap:12px}.hero-tag::before{content:'';width:32px;height:1.5px;background:var(--terracotta)}.hero h1{font-family:var(--serif);font-size:clamp(40px,5.5vw,62px);line-height:1.12;letter-spacing:-.02em;color:var(--deep);margin-bottom:28px;font-weight:600}.hero h1 em{font-style:italic;color:var(--terracotta);font-weight:400}.hero-description{font-size:18px;line-height:1.8;color:var(--medium);max-width:560px;margin-bottom:40px}.hero-cta{display:flex;gap:16px;align-items:center}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--terracotta);color:#fff;border:none;border-radius:6px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .25s}.btn-primary:hover{background:var(--terracotta-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(160,82,45,.2)}.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;color:var(--espresso);border:1.5px solid var(--sand);border-radius:6px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s}.btn-secondary:hover{border-color:var(--espresso)}.btn-light{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--cream);color:var(--deep);border:none;border-radius:6px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .25s;width:fit-content}.btn-light:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+section{padding:100px 48px}.section-inner{max-width:1200px;margin:0 auto}.section-label{font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--terracotta);margin-bottom:16px;display:flex;align-items:center;gap:12px}.section-label::before{content:'';width:24px;height:1.5px;background:var(--terracotta)}.section-title{font-family:var(--serif);font-size:clamp(32px,4vw,46px);line-height:1.15;letter-spacing:-.015em;color:var(--deep);margin-bottom:20px;font-weight:600}.section-subtitle{font-size:17px;color:var(--medium);max-width:600px;line-height:1.7;margin-bottom:56px}
+.ornament{text-align:center;padding:12px 0;color:var(--sand);font-size:20px;letter-spacing:8px}
+#projects{background:var(--parchment)}.project-showcase{background:var(--deep);border-radius:16px;overflow:hidden;margin-bottom:48px}.project-showcase-inner{display:grid;grid-template-columns:1fr 1fr;min-height:520px}.project-showcase-content{padding:56px 48px;display:flex;flex-direction:column;justify-content:center}.project-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(160,82,45,.2);color:var(--terracotta-light);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px;width:fit-content}.project-showcase-content h3{font-family:var(--serif);font-size:34px;color:#fff;line-height:1.15;margin-bottom:16px;font-weight:600}.project-showcase-content p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:28px;max-width:440px}.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}.project-tag{padding:5px 12px;border:1px solid rgba(255,255,255,.12);border-radius:4px;font-size:12px;color:rgba(255,255,255,.45);font-weight:500}.project-showcase-visual{background:var(--espresso);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.placeholder-box{color:rgba(255,255,255,.15);font-size:14px;text-align:center;padding:40px}.placeholder-box .icon{font-size:48px;margin-bottom:12px;display:block}.placeholder-box-light{color:var(--light-text);font-size:13px;text-align:center}.placeholder-box-light .icon{font-size:36px;margin-bottom:8px;display:block}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}.project-card{background:var(--warm-white);border-radius:12px;overflow:hidden;border:1px solid var(--sand);transition:all .3s}.project-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(42,26,14,.08)}.project-card-visual{height:240px;background:var(--linen);display:flex;align-items:center;justify-content:center;overflow:hidden}.project-card-content{padding:28px}.project-card-content .project-type{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--olive);margin-bottom:10px}.project-card-content h3{font-family:var(--serif);font-size:22px;color:var(--deep);margin-bottom:10px;line-height:1.25;font-weight:600}.project-card-content p{font-size:14px;color:var(--medium);line-height:1.7;margin-bottom:20px}.project-link{font-size:14px;font-weight:600;color:var(--terracotta);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}.project-link:hover{gap:10px}
+#about-preview{background:var(--warm-white)}.about-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start}.about-photo{border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(42,26,14,.1)}.about-photo img{width:100%;height:auto;display:block}.about-content h3{font-family:var(--serif);font-size:32px;line-height:1.2;color:var(--deep);margin-bottom:24px;font-weight:600}.about-content p{font-size:16px;color:var(--medium);line-height:1.8;margin-bottom:20px}
+#contact{background:var(--deep);color:#fff;text-align:center}#contact .section-label{justify-content:center;color:var(--terracotta-light)}#contact .section-label::before{background:var(--terracotta-light)}#contact .section-title{color:#fff}#contact .section-subtitle{color:rgba(255,255,255,.45);margin-left:auto;margin-right:auto}.contact-links{display:flex;gap:20px;justify-content:center;margin-top:16px}.contact-link{padding:14px 28px;border:1.5px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;transition:all .2s}.contact-link:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.04)}
+footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding:24px 48px;text-align:center;font-size:13px;color:rgba(255,255,255,.25)}
+.project-detail-hero{padding:160px 48px 80px;background:var(--deep);color:#fff}.project-detail-hero .section-inner{max-width:800px}.project-detail-hero h1{font-family:var(--serif);font-size:clamp(36px,4.5vw,50px);line-height:1.15;margin-bottom:20px;font-weight:600}.project-detail-hero>div>p{font-size:18px;color:rgba(255,255,255,.55);line-height:1.7;max-width:640px}.project-detail-meta{display:flex;gap:40px;margin-top:36px;padding-top:36px;border-top:1px solid rgba(255,255,255,.08)}.meta-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta-light);margin-bottom:4px}.meta-value{font-size:14px;color:rgba(255,255,255,.6)}
+.project-writeup{padding:80px 48px;background:var(--warm-white)}.project-writeup .section-inner{max-width:760px;margin:0 auto}.project-writeup h2{font-family:var(--serif);font-size:28px;color:var(--deep);margin:56px 0 20px;font-weight:600}.project-writeup h2:first-child{margin-top:0}.project-writeup p{font-size:16px;color:var(--medium);line-height:1.85;margin-bottom:20px}
+.project-embed{margin:48px 0;background:var(--parchment);border-radius:10px;border:1px solid var(--sand);overflow:hidden}.embed-placeholder{height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--light-text);font-size:14px;text-align:center}.embed-placeholder .icon{font-size:48px;margin-bottom:12px}
+.about-page-grid{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start;max-width:900px;margin:0 auto}.about-page-photo{border-radius:10px;overflow:hidden;box-shadow:0 6px 24px rgba(42,26,14,.1);position:sticky;top:120px}.about-page-photo img{width:100%;height:auto;display:block}.about-page-content h2{font-family:var(--serif);font-size:26px;color:var(--deep);margin:48px 0 16px;font-weight:600}.about-page-content h2:first-child{margin-top:0}.about-page-content p{font-size:16px;color:var(--medium);line-height:1.85;margin-bottom:16px}
+.about-details{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;padding-top:36px;border-top:1px solid var(--sand)}.about-detail-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px}.about-detail-value{font-size:15px;color:var(--espresso);line-height:1.5}.skills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}.skill-tag{padding:6px 14px;background:var(--olive-pale);color:var(--olive);border-radius:4px;font-size:13px;font-weight:500}.skill-tag.primary{background:var(--terracotta-pale);color:var(--terracotta)}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}.fade-in-delay-1{transition-delay:.1s}.fade-in-delay-2{transition-delay:.2s}.fade-in-delay-3{transition-delay:.3s}
+@media(max-width:900px){nav{padding:16px 24px}section{padding:72px 24px}.hero{padding:100px 24px 60px}.project-showcase-inner{grid-template-columns:1fr}.project-showcase-visual{min-height:280px}.projects-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:40px}.about-photo{max-width:320px}.about-page-grid{grid-template-columns:1fr}.about-page-photo{position:static;max-width:280px}.project-detail-meta{flex-wrap:wrap;gap:24px}}
+@media(max-width:600px){.nav-links a:not(.nav-contact){display:none}.hero h1{font-size:34px}.hero-cta{flex-direction:column;align-items:flex-start}.about-details{grid-template-columns:1fr}.contact-links{flex-direction:column;align-items:center}}
+.page{display:none}.page.active{display:block}
 </style>
 </head>
 <body>
-
-<!-- ===================== NAV ===================== -->
 <nav id="navbar">
   <a href="#" class="nav-name" onclick="showPage('home')">Marissa Gates</a>
   <div class="nav-links">
     <a href="#" onclick="showPage('home')">Work</a>
     <a href="#" onclick="showPage('about')">About</a>
-    <a href="mailto:marissa@example.com" class="nav-contact">Get in Touch</a>
+    <a href="mailto:marissamellorgates@gmail.com" class="nav-contact">Get in Touch</a>
   </div>
 </nav>
 
-<!-- ===================== HOME PAGE ===================== -->
 <div id="page-home" class="page active">
-
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-tag fade-in">Instructional Designer</div>
-      <h1 class="fade-in fade-in-delay-1">I design learning experiences that <em>change behavior</em>, not just check boxes.</h1>
-      <p class="hero-description fade-in fade-in-delay-2">Compliance simulations, technical training, and educational technology — built on action mapping, evidence-based design, and a belief that every interaction should earn the learner's attention.</p>
+      <h1 class="fade-in fade-in-delay-1">I design learning that <em>changes behavior</em>, not&nbsp;just checks&nbsp;boxes.</h1>
+      <p class="hero-description fade-in fade-in-delay-2">Scenario-based eLearning, compliance simulations, and blended training programs — designed to reduce onboarding time, improve compliance accuracy, and build competency that lasts because it was practiced, not just presented.</p>
       <div class="hero-cta fade-in fade-in-delay-3">
         <a href="#projects" class="btn-primary">View Projects ↓</a>
         <a href="#" onclick="showPage('about')" class="btn-secondary">About Me</a>
       </div>
     </div>
   </section>
-
-  <!-- PROJECTS -->
+  <div class="ornament">· · ·</div>
   <section id="projects">
     <div class="section-inner">
       <div class="section-label fade-in">Selected Projects</div>
       <h2 class="section-title fade-in">From simulation to deployment.</h2>
-      <p class="section-subtitle fade-in">Each project represents a different challenge — compliance behavior change, expert knowledge transfer, and mobile-first educational tools.</p>
-
-      <!-- SHOWCASE: WFP Compliance Simulation -->
+      <p class="section-subtitle fade-in">Each project demonstrates a different capability — compliance behavior change through branching simulation, knowledge transfer via structured eLearning, and custom-built learning tools.</p>
       <div class="project-showcase fade-in">
         <div class="project-showcase-inner">
           <div class="project-showcase-content">
@@ -429,367 +76,418 @@
             <a href="#" onclick="showPage('project-wfp')" class="btn-light">View Case Study →</a>
           </div>
           <div class="project-showcase-visual">
-            <div class="placeholder">
-              <div class="icon">🎮</div>
-              Storyline simulation preview<br>
-              <span style="font-size:12px; opacity:0.5;">Screenshot or embed will go here</span>
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#2A1A0E 0%,#3C2415 50%,#5A3D2B 100%);display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden">
+              <div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:.06">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+              </div>
+              <svg viewBox="0 0 400 300" width="360" height="270" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1">
+                <!-- Branching paths -->
+                <path d="M200 40 L200 80" stroke="#C06A3A" stroke-width="2" fill="none"/>
+                <path d="M200 80 L120 130" stroke="#C06A3A" stroke-width="2" fill="none" opacity=".6"/>
+                <path d="M200 80 L280 130" stroke="#C06A3A" stroke-width="2" fill="none"/>
+                <path d="M120 130 L80 190" stroke="#C06A3A" stroke-width="1.5" fill="none" opacity=".4"/>
+                <path d="M120 130 L160 190" stroke="#C06A3A" stroke-width="1.5" fill="none" opacity=".5"/>
+                <path d="M280 130 L240 190" stroke="#C06A3A" stroke-width="2" fill="none"/>
+                <path d="M280 130 L320 190" stroke="#C06A3A" stroke-width="1.5" fill="none" opacity=".5"/>
+                <path d="M240 190 L240 240" stroke="#C06A3A" stroke-width="2" fill="none"/>
+                <!-- Decision nodes -->
+                <circle cx="200" cy="40" r="8" fill="#C06A3A"/>
+                <circle cx="200" cy="80" r="10" fill="none" stroke="#C06A3A" stroke-width="2"/>
+                <circle cx="120" cy="130" r="10" fill="none" stroke="#C06A3A" stroke-width="1.5" opacity=".6"/>
+                <circle cx="280" cy="130" r="10" fill="#C06A3A" opacity=".8"/>
+                <circle cx="80" cy="190" r="7" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".4"/>
+                <circle cx="160" cy="190" r="7" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".5"/>
+                <circle cx="240" cy="190" r="10" fill="#C06A3A" opacity=".9"/>
+                <circle cx="320" cy="190" r="7" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".5"/>
+                <!-- Variable meters -->
+                <rect x="50" y="245" width="120" height="6" rx="3" fill="rgba(255,255,255,.1)"/>
+                <rect x="50" y="245" width="78" height="6" rx="3" fill="#5C6B4F"/>
+                <text x="50" y="240" fill="rgba(255,255,255,.35)" font-size="9" font-family="Source Sans 3,sans-serif">COMPLIANCE</text>
+                <rect x="230" y="245" width="120" height="6" rx="3" fill="rgba(255,255,255,.1)"/>
+                <rect x="230" y="245" width="96" height="6" rx="3" fill="#C06A3A"/>
+                <text x="230" y="240" fill="rgba(255,255,255,.35)" font-size="9" font-family="Source Sans 3,sans-serif">CLIENT TRUST</text>
+                <!-- Ending label -->
+                <rect x="200" y="250" width="80" height="24" rx="4" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".6" transform="translate(-40,0)"/>
+                <text x="200" y="266" fill="rgba(255,255,255,.4)" font-size="8" font-family="Source Sans 3,sans-serif" text-anchor="middle">ENDING 1 OF 4</text>
+              </svg>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- OTHER PROJECTS -->
       <div class="projects-grid">
-        <!-- Project 2: SME Tutorial -->
         <div class="project-card fade-in">
-          <div class="project-card-visual">
-            <div class="placeholder">
-              <div class="icon">🎓</div>
-              Tutorial preview
-            </div>
+          <div class="project-card-visual" style="background:linear-gradient(135deg,#EDE8DF 0%,#F0EBE3 100%);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 200 280" width="140" height="196" xmlns="http://www.w3.org/2000/svg">
+              <!-- Phone frame -->
+              <rect x="30" y="10" width="140" height="260" rx="16" fill="#2A1A0E" stroke="#3C2415" stroke-width="1"/>
+              <rect x="36" y="30" width="128" height="220" rx="4" fill="#FDFBF8"/>
+              <!-- Status bar -->
+              <rect x="36" y="30" width="128" height="20" fill="#F0EBE3"/>
+              <text x="100" y="43" fill="#6B5D52" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle">Service Invoice</text>
+              <!-- Form fields -->
+              <rect x="44" y="58" width="112" height="14" rx="2" fill="#F7F3ED" stroke="#D8D0C4" stroke-width=".5"/>
+              <text x="48" y="68" fill="#9A8E82" font-size="6" font-family="Source Sans 3,sans-serif">Customer Name</text>
+              <rect x="44" y="78" width="112" height="14" rx="2" fill="#F7F3ED" stroke="#D8D0C4" stroke-width=".5"/>
+              <text x="48" y="88" fill="#9A8E82" font-size="6" font-family="Source Sans 3,sans-serif">Property Address</text>
+              <!-- Line items -->
+              <text x="44" y="106" fill="#3C2415" font-size="6" font-family="Source Sans 3,sans-serif" font-weight="bold">Line Items</text>
+              <rect x="44" y="110" width="112" height="12" rx="1" fill="#F7F3ED" stroke="#D8D0C4" stroke-width=".5"/>
+              <text x="48" y="119" fill="#6B5D52" font-size="5.5" font-family="Source Sans 3,sans-serif">Hood cleaning — kitchen #1</text>
+              <text x="148" y="119" fill="#6B5D52" font-size="5.5" font-family="Source Sans 3,sans-serif" text-anchor="end">$350</text>
+              <rect x="44" y="125" width="112" height="12" rx="1" fill="#FDFBF8" stroke="#D8D0C4" stroke-width=".5"/>
+              <text x="48" y="134" fill="#6B5D52" font-size="5.5" font-family="Source Sans 3,sans-serif">Fan belt replacement</text>
+              <text x="148" y="134" fill="#6B5D52" font-size="5.5" font-family="Source Sans 3,sans-serif" text-anchor="end">$125</text>
+              <rect x="44" y="140" width="112" height="12" rx="1" fill="#F7F3ED" stroke="#D8D0C4" stroke-width=".5"/>
+              <text x="48" y="149" fill="#6B5D52" font-size="5.5" font-family="Source Sans 3,sans-serif">Filter replacement (3x)</text>
+              <text x="148" y="149" fill="#6B5D52" font-size="5.5" font-family="Source Sans 3,sans-serif" text-anchor="end">$90</text>
+              <!-- Total -->
+              <line x1="44" y1="160" x2="156" y2="160" stroke="#D8D0C4" stroke-width=".5"/>
+              <text x="48" y="172" fill="#3C2415" font-size="7" font-family="Source Sans 3,sans-serif" font-weight="bold">Total</text>
+              <text x="148" y="172" fill="#3C2415" font-size="7" font-family="Source Sans 3,sans-serif" font-weight="bold" text-anchor="end">$565.00</text>
+              <!-- Signature area -->
+              <rect x="44" y="182" width="112" height="36" rx="2" fill="#FDFBF8" stroke="#A0522D" stroke-width=".8" stroke-dasharray="3,2"/>
+              <text x="100" y="198" fill="#A0522D" font-size="6" font-family="Source Sans 3,sans-serif" text-anchor="middle" opacity=".6">Customer Signature</text>
+              <path d="M65 206 Q75 195 85 204 Q95 210 105 200 Q115 193 125 202" stroke="#A0522D" stroke-width="1" fill="none" opacity=".4"/>
+              <!-- Submit button -->
+              <rect x="44" y="224" width="112" height="18" rx="4" fill="#A0522D"/>
+              <text x="100" y="236" fill="#fff" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold">Submit Invoice</text>
+            </svg>
           </div>
           <div class="project-card-content">
             <div class="project-type">SME Collaboration</div>
-            <h3>Technical Training Tutorial</h3>
-            <p>A structured tutorial series developed in close collaboration with a subject matter expert, translating deep technical knowledge into accessible, step-by-step learning paths.</p>
-            <a href="#" onclick="showPage('project-tutorial')" class="project-link">View Process →</a>
+            <h3>Software Onboarding Tutorial</h3>
+            <p>A Camtasia screen-capture tutorial transitioning field technicians from paper invoicing to a custom electronic system — storyboarded, scripted, and designed for zero-barrier async delivery.</p>
+            <a href="#" onclick="showPage('project-tutorial')" class="project-link">View Case Study →</a>
           </div>
         </div>
-
-        <!-- Project 3: Trellis PWA -->
         <div class="project-card fade-in">
-          <div class="project-card-visual">
-            <div class="placeholder">
-              <div class="icon">📱</div>
-              Trellis app preview
-            </div>
+          <div class="project-card-visual" style="background:linear-gradient(135deg,#E8EDE4 0%,#F0EBE3 100%);display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 280 240" width="252" height="216" xmlns="http://www.w3.org/2000/svg">
+              <!-- Central cycle ring -->
+              <circle cx="140" cy="120" r="65" fill="none" stroke="#5C6B4F" stroke-width="1.5" opacity=".3"/>
+              <circle cx="140" cy="120" r="46" fill="none" stroke="#A0522D" stroke-width="1" opacity=".2" stroke-dasharray="4,4"/>
+              <!-- 7 stage nodes around the cycle (centered at 140,120, r=65) -->
+              <circle cx="140" cy="55" r="12" fill="#5C6B4F" opacity=".9"/>
+              <text x="140" y="58" fill="#fff" font-size="5.5" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold">SEED</text>
+              <circle cx="189" cy="72" r="11" fill="#5C6B4F" opacity=".75"/>
+              <text x="189" y="75" fill="#fff" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle">SOIL</text>
+              <circle cx="205" cy="120" r="11" fill="#5C6B4F" opacity=".65"/>
+              <text x="205" y="123" fill="#fff" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle">ROOT</text>
+              <circle cx="189" cy="168" r="11" fill="#5C6B4F" opacity=".55"/>
+              <text x="189" y="171" fill="#fff" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle">STEM</text>
+              <circle cx="140" cy="185" r="12" fill="#A0522D" opacity=".8"/>
+              <text x="140" y="188" fill="#fff" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold">BLOOM</text>
+              <circle cx="91" cy="168" r="11" fill="#A0522D" opacity=".6"/>
+              <text x="91" y="171" fill="#fff" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle">FRUIT</text>
+              <circle cx="75" cy="120" r="12" fill="#A0522D" opacity=".75"/>
+              <text x="75" y="123" fill="#fff" font-size="4.5" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold">HARVEST</text>
+              <!-- Directional arrows on ring -->
+              <path d="M152 55 A65 65 0 0 1 189 72" fill="none" stroke="#5C6B4F" stroke-width="1" opacity=".4" marker-end="url(#arrowG3)"/>
+              <path d="M189 83 A65 65 0 0 1 205 109" fill="none" stroke="#5C6B4F" stroke-width="1" opacity=".4"/>
+              <path d="M205 131 A65 65 0 0 1 189 157" fill="none" stroke="#5C6B4F" stroke-width="1" opacity=".4"/>
+              <path d="M178 173 A65 65 0 0 1 152 185" fill="none" stroke="#A0522D" stroke-width="1" opacity=".4"/>
+              <defs><marker id="arrowG3" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L6 3 L0 6Z" fill="#5C6B4F" opacity=".5"/></marker></defs>
+              <!-- Three domain labels at 120° intervals outside circle -->
+              <text x="140" y="18" fill="#5C6B4F" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold" opacity=".7">LAND</text>
+              <text x="140" y="27" fill="#6B5D52" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle" opacity=".5">Physical · Spiritual</text>
+              <text x="236" y="206" fill="#2A6B8A" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold" opacity=".7">SEA</text>
+              <text x="236" y="215" fill="#6B5D52" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle" opacity=".5">Intellectual · Career</text>
+              <text x="44" y="206" fill="#7B5B8A" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle" font-weight="bold" opacity=".7">SKY</text>
+              <text x="44" y="215" fill="#6B5D52" font-size="5" font-family="Source Sans 3,sans-serif" text-anchor="middle" opacity=".5">Family · Social</text>
+              <!-- Seed of life - sacred geometry flower -->
+              <g transform="translate(140,120)" opacity=".3">
+                <circle cx="0" cy="-10" r="10" fill="none" stroke="#A0522D" stroke-width=".7"/>
+                <circle cx="8.7" cy="-5" r="10" fill="none" stroke="#A0522D" stroke-width=".7"/>
+                <circle cx="8.7" cy="5" r="10" fill="none" stroke="#A0522D" stroke-width=".7"/>
+                <circle cx="0" cy="10" r="10" fill="none" stroke="#A0522D" stroke-width=".7"/>
+                <circle cx="-8.7" cy="5" r="10" fill="none" stroke="#A0522D" stroke-width=".7"/>
+                <circle cx="-8.7" cy="-5" r="10" fill="none" stroke="#A0522D" stroke-width=".7"/>
+                <circle cx="0" cy="0" r="10" fill="none" stroke="#5C6B4F" stroke-width=".5"/>
+              </g>
+            </svg>
           </div>
           <div class="project-card-content">
-            <div class="project-type">Educational Technology</div>
-            <h3>Trellis — Learning PWA</h3>
-            <p>A Progressive Web App built to support self-directed learning with offline access, progress tracking, and responsive design for mobile-first learners.</p>
-            <a href="#" onclick="showPage('project-trellis')" class="project-link">View Process →</a>
+            <div class="project-type">Learning Architecture</div>
+            <h3>PermaCognition Growth Framework</h3>
+            <p>A fractal learning framework merging permaculture with metacognitive theory — 7-stage macro-cycle, micro-cycle gating, and three life domains — tested across eLearning, ILT for 300+ educators, and now evolving into a digital platform.</p>
+            <a href="#" onclick="showPage('project-trellis')" class="project-link">View Case Study →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- MINI ABOUT (on home page) -->
-  <section id="about-preview" style="background: #fff;">
+  <div class="ornament">· · ·</div>
+  <section id="about-preview">
     <div class="section-inner">
       <div class="about-grid">
-        <div class="about-photo fade-in">
-          Photo placeholder
-        </div>
+        <div class="about-photo fade-in"><img src="marissa-headshot.jpg" alt="Marissa Gates"></div>
         <div class="about-content fade-in">
           <div class="section-label">About</div>
-          <h3>Designer, developer, perpetual learner.</h3>
-          <p>I'm an instructional designer with a background in systems management, fire protection operations, and educational technology. I bring a rare combination: I understand the technical content AND the learning science.</p>
-          <p>My approach starts with the performance gap, not the content. I use action mapping to identify the decisions that matter, then build experiences that let learners practice those decisions with realistic consequences.</p>
-          <a href="#" onclick="showPage('about')" class="btn-primary" style="margin-top: 12px;">More About Me →</a>
+          <h3>I close performance gaps — not just deliver content.</h3>
+          <p>I design and develop eLearning, instructor-led training, and blended programs that produce measurable business results. My work spans compliance training, technical onboarding, and operational readiness — built in Articulate 360, delivered through LMS, and evaluated against Kirkpatrick outcomes.</p>
+          <p>With 15+ years across corporate, nonprofit, and education environments, I bring needs analysis, storyboarding, SME collaboration, and accessible design (WCAG/508) to every project — plus AI-enhanced workflows that let me move faster without cutting corners on quality.</p>
+          <a href="#" onclick="showPage('about')" class="btn-primary" style="margin-top:12px">More About Me →</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
       <div class="section-label fade-in">Get in Touch</div>
       <h2 class="section-title fade-in">Let's build something<br>worth learning.</h2>
-      <p class="section-subtitle fade-in">I'm currently seeking remote instructional design opportunities where I can bring simulation design, technical training, and AI-enhanced development workflows.</p>
+      <p class="section-subtitle fade-in">I'm looking for remote instructional design roles where I can bring scenario-based eLearning development, SME collaboration, and full-lifecycle design ownership to a team that values measurable learning outcomes.</p>
       <div class="contact-links fade-in">
-        <a href="mailto:marissa@example.com" class="contact-link">✉ Email</a>
-        <a href="#" class="contact-link">in LinkedIn</a>
-        <a href="#" class="contact-link">Resume (PDF)</a>
+        <a href="mailto:marissamellorgates@gmail.com" class="contact-link">✉ Email</a>
+        <a href="https://www.linkedin.com/in/marissa-gates-3b38149a" target="_blank" class="contact-link">in LinkedIn</a>
+        <a href="Marissa_Gates_Resume.pdf" target="_blank" class="contact-link">Resume (PDF)</a>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ===================== ABOUT PAGE ===================== -->
 <div id="page-about" class="page">
   <section class="project-detail-hero">
     <div class="section-inner">
-      <div class="section-label" style="color: var(--accent-light);">About</div>
+      <div class="section-label" style="color:var(--terracotta-light)">About</div>
       <h1>Marissa Gates</h1>
-      <p>Instructional designer specializing in compliance simulations, technical training, and educational technology. I turn complex operational knowledge into learning experiences that change behavior.</p>
+      <p>I design eLearning, instructor-led training, and blended programs that reduce ramp-up time, improve compliance rates, and give organizations measurable confidence that their people can perform when it counts.</p>
     </div>
   </section>
-
   <section class="project-writeup">
-    <div class="section-inner">
-      <h2>Background</h2>
-      <p>My path to instructional design isn't typical — and that's exactly why it works. I spent years in systems management and fire protection operations, where I saw firsthand how training either prepared people for critical decisions or failed them at the worst possible moment.</p>
-      <p>I became obsessed with the gap between knowing the rules and executing under pressure. That obsession led me to instructional design, where I could actually build the experiences that close that gap.</p>
-
-      <h2>What I Bring</h2>
-      <p>I combine deep technical domain knowledge with evidence-based learning design. I don't just translate SME content into eLearning — I analyze the performance gap, identify the decisions that matter, and build interactions that force realistic practice with meaningful consequences.</p>
-      <p>I'm also a developer. I build Progressive Web Apps, automate workflows, and integrate AI tools into the design process — not as a gimmick, but as a genuine force multiplier that lets me spend more time on design decisions and less on production work.</p>
-
-      <h2>Design Philosophy</h2>
-      <p>Every project starts with one question: what does the learner need to DO differently? Not know — do. That question drives everything: the content that makes the cut, the interactions I build, and the feedback the learner receives.</p>
-      <p>I use action mapping (Cathy Moore), SAM for iterative development, and gamification frameworks tailored to the content type. I believe in no-nerfing — wrong answers should carry weight. And I believe the best training feels less like a course and more like a rehearsal for real life.</p>
-
-      <div class="about-details">
-        <div>
-          <div class="about-detail-label">Location</div>
-          <div class="about-detail-value">Remote</div>
+    <div class="section-inner" style="max-width:900px">
+      <div class="about-page-grid">
+        <div class="about-page-photo"><img src="marissa-headshot.jpg" alt="Marissa Gates"></div>
+        <div class="about-page-content">
+          <h2>Background</h2>
+          <p>I've spent 15+ years designing learning across corporate operations, nonprofit programs, and K–12 education. That range is an asset: I've facilitated instructor-led training for 100+ adult professionals, built eLearning courses from needs analysis through LMS delivery, managed multi-stakeholder projects on budget and on schedule, and evaluated outcomes against real business metrics.</p>
+          <p>Most recently, I designed compliance and operational readiness training for a fire protection company — including a branching Storyline 360 simulation that transformed a 32-page policy document into a scenario-based experience. The training is designed to reduce supervisor remedial training time, improve compliance assessment accuracy, and eliminate safety incidents tied to knowledge gaps.</p>
+          <h2>What I Bring</h2>
+          <p>I own the full instructional design lifecycle. I conduct needs analysis and gap assessments, storyboard solutions with SMEs, develop in Articulate 360 (Storyline and Rise), produce video tutorials in Camtasia, administer LMS platforms (SCORM/xAPI), and evaluate training effectiveness using Kirkpatrick and learning analytics. I design for accessibility from the start — WCAG 2.1, Section 508, and UDL principles informed by direct special education experience.</p>
+          <p>I also integrate AI tools (ChatGPT, Claude, Gemini) into my design workflow for faster scenario development, content drafting, and iteration — which means I produce more, and higher-quality, deliverables in less time. And when off-the-shelf tools hit their limits, I build custom interactive prototypes in HTML/CSS/JavaScript. Across all of my work — from compliance simulations to holistic growth platforms — the same design principles hold: growth is cyclical, assessment should be authentic, and systems should surface imbalance rather than hide it.</p>
+          <h2>Design Philosophy</h2>
+          <p>I design learning as cycles, not checklists. Every project I build — whether it's a compliance simulation or a self-directed growth platform — is grounded in the same principle: real mastery comes from repeated loops of observation, practice, reflection, and adaptation. Content that doesn't serve a performance outcome gets cut.</p>
+          <p>In corporate work, this means action mapping to connect business goals to observable behaviors, scenario-based practice where wrong answers carry real consequences, and Kirkpatrick evaluation to measure whether the training moved the needle. In every context, it means designing systems where learners encounter authentic tradeoffs, receive feedback that unfolds over time rather than instantly, and demonstrate competence to real people — not just automated scoring.</p>
+          <div class="about-details">
+            <div><div class="about-detail-label">Location</div><div class="about-detail-value">Henderson, NV / Fayette, UT (Remote)</div></div>
+            <div><div class="about-detail-label">Focus Areas</div><div class="about-detail-value">Compliance Training, Scenario-Based eLearning, ILT & Blended Learning, Accessible Design</div></div>
+            <div><div class="about-detail-label">Methodologies</div><div class="about-detail-value">Action Mapping, SAM, ADDIE, Kirkpatrick, Bloom's Taxonomy</div></div>
+            <div><div class="about-detail-label">Education</div><div class="about-detail-value">M.Ed., Elementary K–8 — WGU<br>B.A., Philosophy & German Studies — U of Oregon</div></div>
+          </div>
+          <div class="skills-list">
+            <span class="skill-tag primary">Storyline 360</span>
+            <span class="skill-tag primary">Rise 360</span>
+            <span class="skill-tag primary">Action Mapping</span>
+            <span class="skill-tag primary">Branching Scenarios</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Camtasia</span>
+            <span class="skill-tag">SAM / ADDIE</span>
+            <span class="skill-tag primary">HTML/CSS/JavaScript</span>
+            <span class="skill-tag">AI-Enhanced Workflows</span>
+            <span class="skill-tag">Gamification Design</span>
+            <span class="skill-tag">SME Collaboration</span>
+            <span class="skill-tag">Kirkpatrick Evaluation</span>
+            <span class="skill-tag">Section 508 / WCAG</span>
+            <span class="skill-tag">SCORM / xAPI</span>
+            <span class="skill-tag">Needs Analysis</span>
+            <span class="skill-tag">Bloom's Taxonomy</span>
+            <span class="skill-tag">UDL</span>
+            <span class="skill-tag">Storyboarding</span>
+            <span class="skill-tag">ILT / Blended Learning</span>
+            <span class="skill-tag">LMS Administration</span>
+          </div>
         </div>
-        <div>
-          <div class="about-detail-label">Focus Areas</div>
-          <div class="about-detail-value">Compliance Training, Technical Training, Simulation Design</div>
-        </div>
-        <div>
-          <div class="about-detail-label">Tools</div>
-          <div class="about-detail-value">Storyline 360, Rise 360, Figma, Camtasia, React, AI/LLM Tools</div>
-        </div>
-        <div>
-          <div class="about-detail-label">Education</div>
-          <div class="about-detail-value"><!-- Add education details here --></div>
-        </div>
-      </div>
-
-      <div class="skills-list" style="margin-top: 40px;">
-        <span class="skill-tag">Storyline 360</span>
-        <span class="skill-tag">Rise 360</span>
-        <span class="skill-tag">Action Mapping</span>
-        <span class="skill-tag">Branching Scenarios</span>
-        <span class="skill-tag">Figma</span>
-        <span class="skill-tag">Camtasia</span>
-        <span class="skill-tag">SAM / ADDIE</span>
-        <span class="skill-tag">React / PWA</span>
-        <span class="skill-tag">AI-Enhanced Workflows</span>
-        <span class="skill-tag">Gamification Design</span>
-        <span class="skill-tag">SME Collaboration</span>
-        <span class="skill-tag">Kirkpatrick Evaluation</span>
-        <span class="skill-tag">Section 508 / WCAG</span>
-        <span class="skill-tag">SCORM / xAPI</span>
-        <span class="skill-tag">Needs Analysis</span>
       </div>
     </div>
   </section>
-
-  <section id="contact" style="background: var(--deep); color: #fff; text-align: center;">
+  <section style="background:var(--deep);color:#fff;text-align:center;padding:80px 48px">
     <div class="section-inner">
-      <div class="section-label" style="justify-content: center; color: var(--accent-light);">
-        <span style="display:none;"></span>Get in Touch
-      </div>
-      <h2 class="section-title" style="color: #fff;">Let's work together.</h2>
-      <div class="contact-links" style="margin-top: 32px;">
-        <a href="mailto:marissa@example.com" class="contact-link">✉ Email</a>
-        <a href="#" class="contact-link">in LinkedIn</a>
-        <a href="#" class="contact-link">Resume (PDF)</a>
+      <h2 class="section-title" style="color:#fff">Let's work together.</h2>
+      <div class="contact-links" style="margin-top:32px">
+        <a href="mailto:marissamellorgates@gmail.com" class="contact-link">✉ Email</a>
+        <a href="https://www.linkedin.com/in/marissa-gates-3b38149a" target="_blank" class="contact-link">in LinkedIn</a>
+        <a href="Marissa_Gates_Resume.pdf" target="_blank" class="contact-link">Resume (PDF)</a>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ===================== WFP PROJECT PAGE ===================== -->
 <div id="page-project-wfp" class="page">
   <section class="project-detail-hero">
     <div class="section-inner">
-      <div class="section-label" style="color: var(--accent-light);">Case Study</div>
+      <div class="section-label" style="color:var(--terracotta-light)">Case Study</div>
       <h1>The IROL Field Call</h1>
       <p>A compliance training simulation that replaces lecture-based instruction with decision-driven practice. Built for fire suppression technicians navigating new electronic reporting requirements.</p>
       <div class="project-detail-meta">
-        <div class="meta-item">
-          <div class="meta-label">Role</div>
-          <div class="meta-value">Instructional Designer (sole)</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Tools</div>
-          <div class="meta-value">Storyline 360, Rise 360, Figma, AI Tools</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Duration</div>
-          <div class="meta-value">4 weeks</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Audience</div>
-          <div class="meta-value">Fire suppression technicians</div>
-        </div>
+        <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Instructional Designer (sole)</div></div>
+        <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Storyline 360, Rise 360, Figma, AI Tools</div></div>
+        <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">4 weeks</div></div>
+        <div class="meta-item"><div class="meta-label">Audience</div><div class="meta-value">Fire suppression technicians</div></div>
       </div>
     </div>
   </section>
-
-  <!-- Interactive Demo Embed -->
-  <section style="padding: 0 48px 0; background: var(--warm-white);">
-    <div style="max-width: 1000px; margin: 0 auto; transform: translateY(-40px);">
-      <div class="project-embed">
-        <div class="embed-placeholder">
-          <div class="icon">🎮</div>
-          <strong>Interactive Simulation</strong><br>
-          Storyline 360 embed will load here<br>
-          <span style="font-size: 12px; opacity: 0.5;">Publish Storyline as Web → embed via iframe</span>
+  <section style="padding:0 48px 0;background:var(--parchment)">
+    <div style="max-width:1000px;margin:0 auto;transform:translateY(-40px)">
+      <div class="project-embed"><div style="height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#2A1A0E 0%,#3C2415 50%,#4A2E1C 100%);position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:.04">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid2)"/></svg>
         </div>
-      </div>
+        <svg viewBox="0 0 300 200" width="280" height="187" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1;margin-bottom:24px">
+          <!-- Simplified branching preview -->
+          <circle cx="150" cy="30" r="10" fill="#C06A3A"/>
+          <path d="M150 40 L150 60" stroke="#C06A3A" stroke-width="2"/>
+          <circle cx="150" cy="70" r="12" fill="none" stroke="#C06A3A" stroke-width="2"/>
+          <text x="150" y="74" fill="#C06A3A" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle">?</text>
+          <path d="M138 70 L80 110" stroke="rgba(192,106,58,.4)" stroke-width="1.5"/>
+          <path d="M162 70 L220 110" stroke="rgba(192,106,58,.4)" stroke-width="1.5"/>
+          <circle cx="80" cy="120" r="8" fill="none" stroke="#C06A3A" stroke-width="1.5" opacity=".5"/>
+          <circle cx="220" cy="120" r="8" fill="none" stroke="#C06A3A" stroke-width="1.5" opacity=".5"/>
+          <path d="M80 128 L60 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
+          <path d="M80 128 L100 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
+          <path d="M220 128 L200 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
+          <path d="M220 128 L240 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
+          <circle cx="60" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
+          <circle cx="100" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
+          <circle cx="200" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
+          <circle cx="240" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
+        </svg>
+        <p style="color:rgba(255,255,255,.6);font-size:16px;font-weight:600;margin:0 0 6px;position:relative;z-index:1">Interactive Simulation</p>
+        <p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;position:relative;z-index:1">Storyline 360 branching scenario — coming soon</p>
+      </div></div>
     </div>
   </section>
-
-  <section class="project-writeup" style="background: var(--warm-white); padding-top: 0;">
+  <section class="project-writeup" style="background:var(--parchment);padding-top:0">
     <div class="section-inner">
       <h2>The Challenge</h2>
       <p>Western Fire Prevention faced a critical training gap when Nevada adopted the new IROL electronic reporting system. Under IFC 110.3.1, every licensed service contractor must electronically report fire protection impairments and deficiencies — with strict timelines, mandatory fields, and financial penalties.</p>
       <p>The existing training was a 32-page PowerPoint delivered in a single session. Five complex topic areas compressed into one lecture with no opportunity to practice decision-making under realistic conditions.</p>
       <p>The core performance gap wasn't knowledge — it was execution under pressure. Technicians understood the rules in theory but made critical errors when juggling time constraints, customer relationships, and multi-stop daily schedules.</p>
-
       <h2>The Approach</h2>
       <p>I used action mapping to work backward from the business goal: technicians report accurately under IROL within required timelines. Every simulation decision maps to a real field error.</p>
-      <p>The content detox was aggressive. From 32 pages of lecture material, I extracted 6 critical decisions and built the entire simulation around practicing those decisions with realistic consequences. Reference content was separated into standalone Rise 360 modules — accessible when needed but not required for the simulation.</p>
+      <p>The content detox was aggressive. From 32 pages of lecture material, I extracted 6 critical field decisions and built the entire simulation around practicing those decisions with realistic consequences. Reference content was separated into standalone Rise 360 modules — accessible when needed but not blocking the simulation.</p>
       <p>The dual-variable architecture tracks both Compliance (legal accuracy) and Client Trust (relationship management) simultaneously. This creates authentic dilemmas: a technician who maximizes compliance by leading with legal threats creates customer panic. One who maximizes trust by downplaying findings creates legal exposure. The optimal path requires balancing both.</p>
-
       <h2>Key Design Decisions</h2>
-      <p>The delayed consequence system is the simulation's most distinctive feature. If a learner downplays an impairment during the client conversation, trust initially goes up. But two weeks later in the simulation timeline, the fire department contacts the customer about the report — and trust collapses. This teaches something a quiz cannot: short-term comfort and long-term trust are not the same thing.</p>
-      <p>The four conditional endings (Strategic Stewardship, By the Book, The People Pleaser, The Wake-Up Call) create replayability and allow the simulation to function as both training and assessment without revealing "correct answers."</p>
-
+      <p>The delayed consequence system is the simulation's most distinctive feature. If a learner downplays an impairment during the client conversation, trust initially goes up — the customer is happy. But two weeks later in the simulation timeline, the fire department contacts the customer about the report. The customer feels misled. Trust drops sharply.</p>
+      <p>This mechanic teaches something a traditional quiz cannot: short-term comfort and long-term trust are not the same thing.</p>
+      <p>The four conditional endings — Strategic Stewardship, By the Book, The People Pleaser, The Wake-Up Call — create replayability and allow the simulation to function as both training and assessment without revealing correct answers.</p>
+      <h2>Course Architecture</h2>
+      <p>Rather than forcing everything into Storyline, I designed a multi-tool architecture: one Storyline simulation for complex branching decisions, and four Rise 360 modules for knowledge-based reference content. This demonstrates deliberate tool selection — each tool used where it's strongest.</p>
+      <p>The adaptive pathway routes new hires through knowledge modules first, while experienced technicians start with the simulation and are directed to specific Rise modules based on their performance gaps.</p>
       <h2>AI-Enhanced Workflow</h2>
-      <p>I integrated AI tools at multiple stages — scenario scripting, variable logic design, content analysis, quiz bank generation, and visual asset creation. Every AI output went through SME review. AI accelerated the production timeline by approximately 40%, freeing time for design decisions and SME collaboration.</p>
-
+      <p>I integrated AI tools throughout the production process — scenario scripting, variable logic, content analysis, quiz bank generation, and visual asset creation. Every AI output went through SME review before inclusion. AI accelerated production by approximately 40%, freeing time for design decisions and SME collaboration.</p>
       <h2>Results</h2>
-      <p>The 5-module course architecture (one Storyline simulation + four Rise 360 reference modules) includes an adaptive pathway: new hires complete knowledge modules first, experienced technicians start with the simulation and are routed to specific modules based on performance gaps.</p>
-      <p>Designed evaluation metrics include 95% accuracy on compliance classification, first-attempt IROL acceptance, and zero missed reporting deadlines in the post-training period.</p>
-      <!-- Results data placeholder for post-pilot -->
+      <p>The complete 5-module course delivers approximately 95 minutes of learner time across knowledge building and simulation assessment. Designed evaluation metrics include 95% accuracy on compliance classification, first-attempt IROL acceptance, and zero missed reporting deadlines post-training.</p>
     </div>
   </section>
-
-  <section style="background: var(--warm-white); padding: 0 48px 80px; text-align: center;">
-    <a href="#" onclick="showPage('home')" class="btn-primary">← Back to Projects</a>
-  </section>
+  <section style="background:var(--parchment);padding:0 48px 80px;text-align:center"><a href="#" onclick="showPage('home')" class="btn-primary">← Back to Projects</a></section>
 </div>
 
-<!-- ===================== TUTORIAL PROJECT PAGE ===================== -->
 <div id="page-project-tutorial" class="page">
   <section class="project-detail-hero">
     <div class="section-inner">
-      <div class="section-label" style="color: var(--accent-light);">Case Study</div>
-      <h1>Technical Training Tutorial</h1>
-      <p>A structured tutorial series developed in collaboration with a subject matter expert, designed to transfer complex technical knowledge into accessible, practical learning paths.</p>
+      <div class="section-label" style="color:var(--terracotta-light)">Case Study</div>
+      <h1>Software Onboarding Tutorial</h1>
+      <p>A screen-capture tutorial designed in collaboration with a subject matter expert, transitioning a field team from paper invoicing to a custom electronic invoicing web application.</p>
       <div class="project-detail-meta">
-        <div class="meta-item">
-          <div class="meta-label">Role</div>
-          <div class="meta-value">Instructional Designer</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Tools</div>
-          <div class="meta-value"><!-- Add tools --></div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Collaboration</div>
-          <div class="meta-value">SME Partnership</div>
-        </div>
+        <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Instructional Designer</div></div>
+        <div class="meta-item"><div class="meta-label">Collaboration</div><div class="meta-value">SME (Operations Manager)</div></div>
+        <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Camtasia, Storyboarding, Scripting</div></div>
+        <div class="meta-item"><div class="meta-label">Delivery</div><div class="meta-value">Async (emailed link)</div></div>
       </div>
     </div>
   </section>
-
   <section class="project-writeup">
     <div class="section-inner">
-      <h2>Overview</h2>
-      <p><!-- Write-up content goes here. Structure: Challenge → Approach → SME collaboration process → Design decisions → Results --></p>
-      <p style="color: var(--accent); font-style: italic;">Process write-up coming soon.</p>
+      <h2>The Challenge</h2>
+      <p>The company was transitioning its field technicians from paper-based invoicing to a custom-built electronic invoicing web application used on mobile devices during service calls. This wasn't a minor UI change — it was a fundamental shift in how technicians documented their work in the field, with the added pressure of completing invoices on-site while the customer watches and signs off on a mobile screen.</p>
+      <p>The core risk wasn't whether technicians could learn the software — it was whether they could navigate the app smoothly on a phone in front of a customer, enter data accurately under time pressure, capture the customer's digital signature, and submit — all without fumbling or losing credibility. A classroom walkthrough wouldn't work for a distributed field team. The training needed to be accessible on-demand, rewatchable, and clear enough to follow independently before the first live customer interaction.</p>
+
+      <h2>The SME Collaboration Process</h2>
+      <p>The operations manager served as the subject matter expert for this project. He had built the custom application and understood every field, workflow, and edge case — but that depth of knowledge was part of the challenge. The gap between what the SME knew intuitively and what a technician needed to understand on day one was significant.</p>
+      <p>My role was to bridge that gap. I conducted working sessions with the SME to map the complete invoicing workflow, identify the critical steps where errors were most likely, and distinguish between need-to-know and nice-to-know information. The SME understood the system at an engineering level; I translated that into a task-level learning sequence that followed the technician's actual workflow on-site — open the app, select the customer, enter line items, review totals with the customer, capture their signature on the device, and submit.</p>
+
+      <h2>Storyboarding & Scripting</h2>
+      <p>Before recording anything, I storyboarded the full tutorial — mapping each screen, the actions the learner would see, and the narration that would accompany each step. This served two purposes: it gave the SME a concrete artifact to review and approve before production began, and it ensured the tutorial followed a logical task sequence rather than a feature tour.</p>
+      <p>The script was written in plain, direct language — no jargon, no assumptions about technical comfort level. Each step was narrated as an action ("Tap the customer name field, then select from the dropdown") rather than a description ("The customer name field allows you to choose from existing customers"). This distinction matters for field technicians who need to do, not just understand.</p>
+
+      <h2>Production</h2>
+      <p>I produced the tutorial in Camtasia using screen capture of the live application. Rather than narrating the tutorial myself, I directed the subject matter expert to record the voiceover — a deliberate choice. Field technicians trust a voice from their own organization over an outside narrator, and the SME naturally speaks the techs' language. My role shifted to directing the recording session: cueing each segment, coaching pacing, and deciding when a take was good enough.</p>
+      <p>Key production decisions included recording audio in short segments (one step at a time) rather than a single continuous pass, using zoom-and-pan to focus attention on the relevant area of the screen during each step, adding callout annotations to highlight critical fields, and pacing the narration to match a first-time user's speed — deliberately slower than an expert would move through the interface.</p>
+      <p>The tutorial was structured as a single, linear walkthrough of the complete invoicing workflow. For a distributed field team accessing this asynchronously, one cohesive video they can follow start-to-finish and rewatch as needed was more practical than a fragmented module series that requires navigation.</p>
+
+      <h2>Delivery & Access</h2>
+      <p>The completed tutorial is delivered via a direct link emailed to technicians. This was a deliberate delivery choice — no LMS login, no course enrollment, no barriers between the technician and the training. A field technician can pull it up on the same mobile device they'll use for invoicing, watch it before their first customer interaction, and rewatch specific steps as needed. The same link works for onboarding new hires and as a refresher for existing staff.</p>
+
+      <h2>Design Decisions</h2>
+      <p><strong>Task sequence over feature tour.</strong> The tutorial follows the technician's real on-site workflow, not the application's menu structure. A technician standing in front of a customer doesn't think "I need to access the customer module" — they think "I need to invoice this job and get a signature." The tutorial mirrors that thinking.</p>
+      <p><strong>Single video over modular series.</strong> For a simple, linear workflow delivered to a non-technical audience asynchronously, one complete walkthrough is easier to access, easier to follow, and easier to rewatch than navigating between modules.</p>
+      <p><strong>Script-first production.</strong> Storyboarding and scripting before recording eliminated rework, gave the SME a reviewable artifact before production investment, and ensured the narration was tight and action-oriented rather than improvised.</p>
+      <p><strong>Zero-barrier mobile delivery.</strong> No logins, no LMS, no enrollment. One link, accessible on the same mobile device technicians use for invoicing. This was the right choice for a field team that performs customer-facing transactions on their phones throughout the day.</p>
     </div>
   </section>
-
-  <section style="padding: 40px 48px 80px; text-align: center;">
-    <a href="#" onclick="showPage('home')" class="btn-primary">← Back to Projects</a>
-  </section>
+  <section style="padding:40px 48px 80px;text-align:center"><a href="#" onclick="showPage('home')" class="btn-primary">← Back to Projects</a></section>
 </div>
 
-<!-- ===================== TRELLIS PROJECT PAGE ===================== -->
 <div id="page-project-trellis" class="page">
   <section class="project-detail-hero">
     <div class="section-inner">
-      <div class="section-label" style="color: var(--accent-light);">Case Study</div>
-      <h1>Trellis — Learning PWA</h1>
-      <p>A Progressive Web App built to support self-directed learning, demonstrating how educational technology design and front-end development intersect to solve real learner needs.</p>
+      <div class="section-label" style="color:var(--terracotta-light)">Case Study</div>
+      <h1>PermaCognition: A Mastery-Based Growth Framework</h1>
+      <p>A scaffolded, fractal learning framework merging permaculture design principles with metacognitive theory — tested across eLearning, instructor-led professional development, and family education before evolving into a digital platform serving individuals, families, and communities.</p>
       <div class="project-detail-meta">
-        <div class="meta-item">
-          <div class="meta-label">Role</div>
-          <div class="meta-value">Designer &amp; Developer</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Stack</div>
-          <div class="meta-value">React, PWA, SQLite</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Platform</div>
-          <div class="meta-value">Mobile-first, Offline-capable</div>
-        </div>
+        <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Learning Architect & Instructional Designer</div></div>
+        <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">WordPress/LearnDash, ILT Facilitation, React PWA (Supabase)</div></div>
+        <div class="meta-item"><div class="meta-label">Timeline</div><div class="meta-value">2015–Present (ongoing)</div></div>
+        <div class="meta-item"><div class="meta-label">Audiences</div><div class="meta-value">K–8 learners, families, 300+ adult educators</div></div>
       </div>
     </div>
   </section>
-
   <section class="project-writeup">
     <div class="section-inner">
-      <h2>Overview</h2>
-      <p><!-- Write-up content goes here. Structure: Problem → Technical approach → UX design decisions → Demo/screenshots → Reflection --></p>
-      <p style="color: var(--accent); font-style: italic;">Process write-up coming soon.</p>
+      <h2>The Design Challenge</h2>
+      <p>Most learning frameworks are built for a single domain — professional skills, academic content, or personal development — delivered to a single audience in a single format. I needed a framework that could organize growth across every dimension of a person's life, adapt to radically different audiences (children, families, adult professionals), and scale from facilitated in-person experiences to self-directed digital delivery.</p>
+      <p>The core question wasn't "what content do learners need?" It was: how do people actually grow — and can you design a system that mirrors that process?</p>
+
+      <h2>The Framework Architecture</h2>
+      <p>The answer came from permaculture design principles applied to human development — a methodology I call PermaCognition. The framework organizes growth across three life domains: <strong>Land</strong> (spiritual, physical, psychological, passion), <strong>Sea</strong> (intellectual, financial, career), and <strong>Sky</strong> (family, social, environment). Every learner's growth is mapped across all three domains simultaneously, and the system detects imbalance — if one domain is neglected, it surfaces naturally.</p>
+      <p>Within each domain, learners pursue <strong>projects</strong> — the core unit of growth. Each project progresses through a <strong>7-stage macro-cycle</strong> grounded in learning science: Discovery Process → Knowledge Accumulation → Experiential Learning → Prefrontal Insights → Community Extension → Utilize Abundance → Synthesis. Each stage maps to a distinct cognitive function — from identifying a core interest, to gathering and applying knowledge, to accessing higher-order thinking, to extending learning outward through community, and finally synthesizing mastery and preparing for the next cycle.</p>
+      <p>A deliberate UX decision shaped how learners experience these stages. Rather than exposing academic terminology, I translated each stage into a <strong>natural growth metaphor</strong>: Seed → Soil → Root → Stem → Bloom → Fruit → Harvest. This wasn't decoration — it was a design choice rooted in the framework's permaculture foundation. The metaphor gives learners an intuitive mental model of progression ("I'm in the Root stage — I'm building foundations") without requiring them to understand the underlying curriculum architecture. The academic structure drives the design; the nature language drives the experience.</p>
+      <p>Gating advancement between stages is a <strong>micro-cycle</strong> loop: Observation → Analysis → Implementation → Reflection. Learners must complete a defined number of micro-cycles before progressing — ensuring depth, not just completion. Every action is a loop, not a checkbox. The framework follows a <strong>fractal spiral pattern</strong>: the micro-cycle mirrors the macro-cycle, which mirrors the learner's larger growth trajectory. The system is intentionally open-ended — completing one project unlocks the next, with increasing autonomy at each level. There is no final stage.</p>
+
+      <h2>Phase 1: eLearning Course (PermieKids)</h2>
+      <p>The first implementation was a 7-module self-paced eLearning course built on the PermieKids platform using WordPress and LearnDash LMS. Each module maps directly to a macro-cycle stage — Module 1: Discovery Process guides learners to identify a core interest aligned with their authentic self; Module 3: Experiential Learning moves them into hands-on application; Module 5: Community Extension pushes learning outward through micro social experiments with friends and family. I wrote learning objectives aligned to each stage's cognitive function, designed assessments around the micro-cycle loop, and built the content architecture for self-directed online delivery. This version validated that the framework could function in a fully digital, self-paced format — and that the nature growth metaphor translated to structured eLearning without losing its core logic.</p>
+
+      <h2>Phase 2: Pilot & Field Testing</h2>
+      <p>I then piloted the framework with a beta cohort across 50+ locations nationwide, testing it in environments ranging from small family groups to large community settings. Each context revealed different facilitation needs and pacing requirements, but the macro-cycle structure and micro-cycle gating held across all of them. The Synthesis stage (Module 7) consistently produced the highest engagement — learners invested more effort when their audience was real people rather than an automated grading system.</p>
+
+      <h2>Phase 3: Instructor-Led Professional Development</h2>
+      <p>The framework was then adapted for adult professional learners when I was contracted by Green Our Planet to design and deliver grant-funded professional development. I facilitated 3 multi-day instructor-led training institutes for groups of 100+ K–12 educators per event (300+ total), using the same scaffolded progression but reframed for teachers learning to integrate project-based and experiential methods into their own instruction.</p>
+      <p>The adaptation proved the framework's core design principle: the stage structure and micro-cycle logic remain constant while content, pacing, and facilitation adapt to the audience. The Synthesis stage translated naturally — educators presented implementation plans to peer groups and facilitators instead of sharing projects with community. This reduced redesign effort by roughly 60% compared to building from scratch.</p>
+
+      <h2>Phase 4: Trellis (Digital Platform — In Development)</h2>
+      <p>The current evolution is Trellis — a Progressive Web App that digitizes the full framework into a mobile-first, offline-capable platform. After three phases of implementation, the framework had proven itself across audiences and delivery formats, but it needed a system that could scale beyond a single LMS or facilitator.</p>
+      <p>Trellis maps the user's growth across all three domains (Land, Sea, Sky), tracks project progression through the 7-stage macro-cycle, enforces micro-cycle gating, and surfaces domain imbalance through a prioritization engine that automatically adjusts daily focus based on which areas of life are being neglected. This is where the nature metaphor becomes more than UX language — projects are visualized as procedurally generated plants, and each stage of growth (Seed through Harvest) renders visually, giving learners an organic representation of their progress rather than a percentage bar. The academic architecture drives the system logic; the growth metaphor drives the interface.</p>
+      <p>The platform also introduces ecosystem-level design: individual growth connects to family units and community groups, enabling what the framework calls "community pollination" — where one person's Synthesis stage creates learning opportunities for others in their ecosystem.</p>
+
+      <h2>Key Design Decisions</h2>
+      <p><strong>Fractal logic over linear progression.</strong> Every action is a loop (Observation → Analysis → Implementation → Reflection), and the macro-cycle itself is a larger version of the same loop. This mirrors how real expertise develops — not as a sequence of topics, but as deepening cycles of practice and reflection.</p>
+      <p><strong>Dual-layer naming: academic architecture, intuitive experience.</strong> The curriculum structure uses precise pedagogical terms (Discovery Process, Knowledge Accumulation, Experiential Learning, Prefrontal Insights, Community Extension, Utilize Abundance, Synthesis) to ensure each stage maps to a defined cognitive function. But learners never see these terms — they interact with the natural growth metaphor (Seed → Harvest), which provides an intuitive, motivating mental model without requiring instructional design literacy. This separation lets the framework serve both curriculum designers and end learners without compromising either experience.</p>
+      <p><strong>Authentic assessment through community synthesis.</strong> The Synthesis stage requires learners to demonstrate mastery to real community members — not answer quiz questions. This creates intrinsic motivation and ensures transfer. If you can explain and defend your project to multiple audiences, you've internalized the learning.</p>
+      <p><strong>Domain balance over single-track mastery.</strong> The three-domain model (Land/Sea/Sky) prevents the common failure mode of personal development systems: obsessive focus on one area at the expense of others. The system detects imbalance and adapts.</p>
+      <p><strong>Context-adaptive architecture.</strong> The framework's stage structure and gating logic remain constant while content, pacing, and delivery format adapt to the audience. One architecture served children, families, and adult professionals across eLearning, ILT, and self-directed digital formats.</p>
+
+      <h2>Results Across Phases</h2>
+      <p>Across all implementations, the framework produced consistent outcomes: 50%+ participant retention across multiple seasons in the family program, successful delivery to 300+ adult educators in ILT format, and validated self-paced completion in the eLearning version. The Synthesis stage consistently drove the highest engagement and deepest learning across every audience and delivery context.</p>
     </div>
   </section>
-
-  <section style="padding: 40px 48px 80px; text-align: center;">
-    <a href="#" onclick="showPage('home')" class="btn-primary">← Back to Projects</a>
-  </section>
+  <section style="padding:40px 48px 80px;text-align:center"><a href="#" onclick="showPage('home')" class="btn-primary">← Back to Projects</a></section>
 </div>
 
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  © 2025 Marissa Gates. Designed with intention.
-</footer>
+<footer>© 2026 Marissa Gates. Designed with intention.</footer>
 
 <script>
-  // Page routing
-  function showPage(page) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('page-' + page) || document.getElementById('page-home');
-    target.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Re-trigger fade animations
-    setTimeout(() => {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 40) {
-          el.classList.add('visible');
-        }
-      });
-    }, 100);
-  }
-
-  // Scroll-triggered animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 40) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // Handle anchor links within pages
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (href !== '#' && !a.getAttribute('onclick')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const t=document.getElementById('page-'+page)||document.getElementById('page-home');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(()=>{document.querySelectorAll('.fade-in').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-40)el.classList.add('visible')})},50)}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
 </script>
-
 </body>
 </html>
