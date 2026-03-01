@@ -528,4 +528,8 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
 
 <script>
 function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const t=document.getElementById('page-'+page)||document.getElementById('page-home');t.classList.add('active');window.scrollTo({top:0,behavior:'instant'});setTimeout(()=>{document.querySelectorAll('.fade-in').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-40)el.classList.add('visible')})},50)}
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{thresh
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
+</script>
+</body>
+</html>
