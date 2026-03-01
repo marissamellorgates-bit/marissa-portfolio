@@ -27,7 +27,7 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
 .about-page-grid{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start;max-width:900px;margin:0 auto}.about-page-photo{border-radius:10px;overflow:hidden;box-shadow:0 6px 24px rgba(42,26,14,.1);position:sticky;top:120px}.about-page-photo img{width:100%;height:auto;display:block}.about-page-content h2{font-family:var(--serif);font-size:26px;color:var(--deep);margin:48px 0 16px;font-weight:600}.about-page-content h2:first-child{margin-top:0}.about-page-content p{font-size:16px;color:var(--medium);line-height:1.85;margin-bottom:16px}
 .about-details{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;padding-top:36px;border-top:1px solid var(--sand)}.about-detail-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px}.about-detail-value{font-size:15px;color:var(--espresso);line-height:1.5}.skills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}.skill-tag{padding:6px 14px;background:var(--olive-pale);color:var(--olive);border-radius:4px;font-size:13px;font-weight:500}.skill-tag.primary{background:var(--terracotta-pale);color:var(--terracotta)}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}.fade-in-delay-1{transition-delay:.1s}.fade-in-delay-2{transition-delay:.2s}.fade-in-delay-3{transition-delay:.3s}
-@media(max-width:900px){nav{padding:16px 24px}section{padding:72px 24px}.hero{padding:100px 24px 60px}.hero-inner{grid-template-columns:1fr!important}.project-showcase-inner{grid-template-columns:1fr}.project-showcase-visual{min-height:280px}.projects-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:40px}.about-photo{max-width:320px}.about-page-grid{grid-template-columns:1fr}.about-page-photo{position:static;max-width:280px}.project-detail-meta{flex-wrap:wrap;gap:24px}}
+@media(max-width:900px){nav{padding:16px 24px}section{padding:72px 24px}.hero{padding:100px 24px 60px}.hero-inner{grid-template-columns:1fr!important}.hero-highlights{margin-top:32px}.project-showcase-inner{grid-template-columns:1fr}.project-showcase-visual{min-height:280px}.projects-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:40px}.about-photo{max-width:320px}.about-page-grid{grid-template-columns:1fr}.about-page-photo{position:static;max-width:280px}.project-detail-meta{flex-wrap:wrap;gap:24px}}
 @media(max-width:600px){.nav-links a:not(.nav-contact){display:none}.hero h1{font-size:34px}.hero-cta{flex-direction:column;align-items:flex-start}.about-details{grid-template-columns:1fr}.contact-links{flex-direction:column;align-items:center}}
 .page{display:none}.page.active{display:block}
 </style>
@@ -38,7 +38,7 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
   <div class="nav-links">
     <a href="#" onclick="showPage('home')">Work</a>
     <a href="#" onclick="showPage('about')">About</a>
-    <a href="/cdn-cgi/l/email-protection#98f5f9eaf1ebebf9f5fdf4f4f7eafff9ecfdebd8fff5f9f1f4b6fbf7f5" class="nav-contact">Get in Touch</a>
+    <a href="#" class="nav-contact" onclick="showPage('home');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);return false">Get in Touch</a>
   </div>
 </nav>
 
@@ -46,45 +46,35 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
   <section class="hero">
     <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1200px;margin:0 auto;width:100%">
       <div class="hero-content">
-        <div class="hero-tag fade-in">Instructional Designer</div>
-        <h1 class="fade-in fade-in-delay-1">Structured learning, <em>lasting growth.</em></h1>
-        <p class="hero-description fade-in fade-in-delay-2">Scenario-based eLearning, compliance simulations, and blended training — designed to build competency that lasts because it was practiced, not just presented.</p>
-        <div class="hero-cta fade-in fade-in-delay-3">
-          <a href="#projects" class="btn-primary">View Projects ↓</a>
-          <a href="#" onclick="showPage('about')" class="btn-secondary">About Me</a>
-        </div>
+      <div class="hero-tag fade-in">Instructional Designer</div>
+      <h1 class="fade-in fade-in-delay-1">Structured learning, <em>lasting growth.</em></h1>
+      <p class="hero-description fade-in fade-in-delay-2">Scenario-based eLearning, compliance simulations, and blended training — designed to build competency that lasts because it was practiced, not just presented.</p>
+      <div class="hero-cta fade-in fade-in-delay-3">
+        <a href="#projects" class="btn-primary">View Projects ↓</a>
+        <a href="#" onclick="showPage('about')" class="btn-secondary">About Me</a>
       </div>
-      <div class="hero-highlights fade-in fade-in-delay-2" style="display:flex;flex-direction:column;gap:28px;padding:40px;background:var(--warm-white);border-radius:12px;border:1px solid var(--sand)">
-        <div style="display:flex;align-items:flex-start;gap:16px">
-          <span style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--terracotta);line-height:1">15+</span>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--espresso)">Years in Learning Design</div>
-            <div style="font-size:13px;color:var(--medium);line-height:1.5;margin-top:2px">Corporate, nonprofit, and K–12 environments</div>
+      </div>
+      <div class="hero-highlights fade-in fade-in-delay-2" style="display:flex;flex-direction:column;gap:0;background:var(--warm-white);border-radius:12px;border:1px solid var(--sand);overflow:hidden">
+        <div style="padding:32px 36px;border-bottom:1px solid var(--sand)">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A0522D" stroke-width="2"><path d="M9 18l6-6-6-6"/><path d="M4 12h12"/></svg>
+            <div style="font-family:var(--serif);font-size:17px;font-weight:600;color:var(--deep)">Practice Over Presentation</div>
           </div>
+          <div style="font-size:14px;color:var(--medium);line-height:1.6">Training that works because learners do the job before they’re on the job.</div>
         </div>
-        <div style="border-top:1px solid var(--sand)"></div>
-        <div style="display:flex;align-items:flex-start;gap:16px">
-          <span style="font-family:var(--serif);font-size:32px;font-weight:700;color:var(--terracotta);line-height:1">300+</span>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--espresso)">Educators Trained</div>
-            <div style="font-size:13px;color:var(--medium);line-height:1.5;margin-top:2px">ILT workshops, blended programs, PD institutes</div>
+        <div style="padding:32px 36px;border-bottom:1px solid var(--sand)">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A0522D" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+            <div style="font-family:var(--serif);font-size:17px;font-weight:600;color:var(--deep)">Built to Measure</div>
           </div>
+          <div style="font-size:14px;color:var(--medium);line-height:1.6">Every design starts with the outcome it needs to prove.</div>
         </div>
-        <div style="border-top:1px solid var(--sand)"></div>
-        <div style="display:flex;align-items:flex-start;gap:16px">
-          <span style="font-size:20px;line-height:1.6">🎯</span>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--espresso)">Action Mapping & ADDIE</div>
-            <div style="font-size:13px;color:var(--medium);line-height:1.5;margin-top:2px">Performance-first design, measurable outcomes</div>
+        <div style="padding:32px 36px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A0522D" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <div style="font-family:var(--serif);font-size:17px;font-weight:600;color:var(--deep)">Full Lifecycle, One Designer</div>
           </div>
-        </div>
-        <div style="border-top:1px solid var(--sand)"></div>
-        <div style="display:flex;align-items:flex-start;gap:16px">
-          <span style="font-size:20px;line-height:1.6">⚡</span>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--espresso)">AI-Enhanced Workflow</div>
-            <div style="font-size:13px;color:var(--medium);line-height:1.5;margin-top:2px">Claude, ChatGPT, Gemini integrated into development</div>
-          </div>
+          <div style="font-size:14px;color:var(--medium);line-height:1.6">Needs analysis through evaluation — no handoffs, no gaps.</div>
         </div>
       </div>
     </div>
@@ -269,13 +259,13 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
   <section id="contact">
     <div class="section-inner">
       <div class="section-label fade-in">Get in Touch</div>
-      <h2 class="section-title fade-in">Let's build something<br>worth learning.</h2>
+      <h2 class="section-title fade-in">Let's work together.</h2>
       <p class="section-subtitle fade-in">I'm looking for remote instructional design roles where I can bring scenario-based eLearning development, SME collaboration, and full-lifecycle design ownership to a team that values measurable learning outcomes.</p>
       <div class="contact-links fade-in">
-        <a href="/cdn-cgi/l/email-protection#157874677c666674787079797a677274617066557278747c793b767a78" class="contact-link">✉ Email</a>
         <a href="https://www.linkedin.com/in/marissa-gates-id" target="_blank" class="contact-link">in LinkedIn</a>
         <a href="Marissa_Gates_Resume.pdf" target="_blank" class="contact-link">Resume (PDF)</a>
       </div>
+      <div style="margin-top:24px;font-size:18px;font-weight:500;color:var(--terracotta-light);letter-spacing:0.3px;user-select:all;cursor:text">marissamellorgates@gmail.com</div>
     </div>
   </section>
 </div>
@@ -338,10 +328,10 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
     <div class="section-inner">
       <h2 class="section-title" style="color:#fff">Let's work together.</h2>
       <div class="contact-links" style="margin-top:32px">
-        <a href="/cdn-cgi/l/email-protection#1e737f6c776d6d7f737b7272716c797f6a7b6d5e79737f7772307d7173" class="contact-link">✉ Email</a>
         <a href="https://www.linkedin.com/in/marissa-gates-id" target="_blank" class="contact-link">in LinkedIn</a>
         <a href="Marissa_Gates_Resume.pdf" target="_blank" class="contact-link">Resume (PDF)</a>
       </div>
+      <div style="margin-top:24px;font-size:18px;font-weight:500;color:var(--terracotta-light);letter-spacing:0.3px;user-select:all;cursor:text">marissamellorgates@gmail.com</div>
     </div>
   </section>
 </div>
@@ -509,13 +499,6 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
       <p><strong>Authentic assessment through community synthesis.</strong> The Synthesis stage requires learners to demonstrate mastery to real community members — not answer quiz questions. This creates intrinsic motivation and ensures transfer. If you can explain and defend your project to multiple audiences, you've internalized the learning.</p>
       <p><strong>Domain balance over single-track mastery.</strong> The three-domain model (Land/Sea/Sky) prevents the common failure mode of personal development systems: obsessive focus on one area at the expense of others. The system detects imbalance and adapts.</p>
       <p><strong>Context-adaptive architecture.</strong> The framework's stage structure and gating logic remain constant while content, pacing, and delivery format adapt to the audience. One architecture served children, families, and adult professionals across eLearning, ILT, and self-directed digital formats.</p>
-
-      <h2>Explore the Platform</h2>
-      <p>The interactive tutorial below walks through the complete Trellis framework — the three domains, seven growth stages, 18 plant archetypes, and the micro-cycle practice loop. This is the same onboarding experience new users encounter when they first open the app.</p>
-      <div style="margin:2rem 0;border-radius:12px;overflow:hidden;border:1px solid #d4c5b0;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-        <iframe src="https://trellis-tau.vercel.app/tutorial" width="100%" height="700" style="border:none;display:block;" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <p style="font-size:0.9em;color:#888;text-align:center;margin-bottom:2rem;"><a href="https://trellis-tau.vercel.app/tutorial" target="_blank" rel="noopener" style="color:#8B5E3C;">Open tutorial in new tab &#8594;</a></p>
 
       <h2>Results Across Phases</h2>
       <p>Across all implementations, the framework produced consistent outcomes: 50%+ participant retention across multiple seasons in the family program, successful delivery to 300+ adult educators in ILT format, and validated self-paced completion in the eLearning version. The Synthesis stage consistently drove the highest engagement and deepest learning across every audience and delivery context.</p>
