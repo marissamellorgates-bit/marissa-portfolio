@@ -346,32 +346,10 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
   </section>
   <section style="padding:0 48px 0;background:var(--parchment)">
     <div style="max-width:1000px;margin:0 auto;transform:translateY(-40px)">
-      <div class="project-embed"><div style="height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#2A1A0E 0%,#3C2415 50%,#4A2E1C 100%);position:relative;overflow:hidden">
-        <div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:.04">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid2)"/></svg>
-        </div>
-        <svg viewBox="0 0 300 200" width="280" height="187" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1;margin-bottom:24px">
-          <!-- Simplified branching preview -->
-          <circle cx="150" cy="30" r="10" fill="#C06A3A"/>
-          <path d="M150 40 L150 60" stroke="#C06A3A" stroke-width="2"/>
-          <circle cx="150" cy="70" r="12" fill="none" stroke="#C06A3A" stroke-width="2"/>
-          <text x="150" y="74" fill="#C06A3A" font-size="7" font-family="Source Sans 3,sans-serif" text-anchor="middle">?</text>
-          <path d="M138 70 L80 110" stroke="rgba(192,106,58,.4)" stroke-width="1.5"/>
-          <path d="M162 70 L220 110" stroke="rgba(192,106,58,.4)" stroke-width="1.5"/>
-          <circle cx="80" cy="120" r="8" fill="none" stroke="#C06A3A" stroke-width="1.5" opacity=".5"/>
-          <circle cx="220" cy="120" r="8" fill="none" stroke="#C06A3A" stroke-width="1.5" opacity=".5"/>
-          <path d="M80 128 L60 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
-          <path d="M80 128 L100 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
-          <path d="M220 128 L200 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
-          <path d="M220 128 L240 155" stroke="rgba(192,106,58,.3)" stroke-width="1"/>
-          <circle cx="60" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
-          <circle cx="100" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
-          <circle cx="200" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
-          <circle cx="240" cy="162" r="6" fill="none" stroke="#C06A3A" stroke-width="1" opacity=".3"/>
-        </svg>
-        <p style="color:rgba(255,255,255,.6);font-size:16px;font-weight:600;margin:0 0 6px;position:relative;z-index:1">Interactive Simulation</p>
-        <p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;position:relative;z-index:1">Storyline 360 branching scenario — coming soon</p>
-      </div></div>
+      <div class="project-embed" style="border-radius:10px;overflow:hidden;border:1px solid var(--sand)">
+        <img src="irol-truck-scene.png" alt="Storyline 360 simulation scene showing the interior of a fire suppression technician's truck" style="width:100%;height:auto;display:block">
+      </div>
+      <p style="font-size:0.85rem;color:#888;text-align:center;margin-top:12px">Storyline 360 simulation scene. Interactive version in development.</p>
     </div>
   </section>
   <section class="project-writeup" style="background:var(--parchment);padding-top:0">
@@ -383,16 +361,28 @@ footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.05);padding
       <h2>The Approach</h2>
       <p>Action mapping drove the design, working backward from the business goal: technicians report accurately under IROL within required timelines. Every simulation decision maps to a real field error that supervisors had documented.</p>
       <p>The content detox was aggressive. 32 pages of lecture material became 6 critical field decisions. The entire simulation was built around practicing those decisions with realistic consequences. Reference content went into standalone Rise 360 modules, accessible when needed but not blocking the simulation.</p>
+      <div style="margin:2rem 0;border-radius:12px;overflow:hidden;border:1px solid #d4c5b0;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <img src="irol-action-map.png" alt="Action map showing the IROL compliance simulation design, mapping business goals to critical field decisions" style="width:100%;height:auto;display:block">
+      </div>
+      <p style="font-size:0.85rem;color:#888;text-align:center;margin-bottom:2rem">Action map connecting the business goal to critical field decisions</p>
       <p>The dual-variable architecture tracks both Compliance (legal accuracy) and Client Trust (relationship management) simultaneously. This creates authentic dilemmas: a technician who maximizes compliance by leading with legal threats creates customer panic. One who maximizes trust by downplaying findings creates legal exposure. The optimal path requires balancing both.</p>
       <h2>Key Design Decisions</h2>
       <p>The delayed consequence system is the simulation's most distinctive feature. If a learner downplays an impairment during the client conversation, trust initially goes up. The customer is happy. But two weeks later in the simulation timeline, the fire department contacts the customer about the report. The customer feels misled. Trust drops sharply.</p>
       <p>This mechanic teaches something a traditional quiz cannot: short-term comfort and long-term trust are not the same thing.</p>
+      <div style="margin:2rem 0;border-radius:12px;overflow:hidden;border:1px solid #d4c5b0;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <img src="irol-dialogue-script.png" alt="Branching dialogue script showing a decision point where the learner chooses how to classify a field finding" style="width:100%;height:auto;display:block">
+      </div>
+      <p style="font-size:0.85rem;color:#888;text-align:center;margin-bottom:2rem">A decision point in the branching script. Each choice carries different compliance and trust consequences.</p>
       <p>Four conditional endings (Strategic Stewardship, By the Book, The People Pleaser, The Wake-Up Call) create replayability. The simulation works as both training and assessment without revealing correct answers.</p>
       <h2>Course Architecture</h2>
       <p>Rather than forcing everything into Storyline, the course splits across tools: one Storyline simulation for complex branching decisions, and four Rise 360 modules for knowledge-based reference content. Each tool used where it's strongest.</p>
       <p>The adaptive pathway routes new hires through knowledge modules first, while experienced technicians start with the simulation and are directed to specific Rise modules based on their performance gaps.</p>
       <h2>AI-Enhanced Workflow</h2>
       <p>AI tools accelerated production by roughly 40%, covering scenario scripting, variable logic, content analysis, quiz bank generation, and visual asset creation. Every AI output went through SME review before inclusion.</p>
+      <div style="margin:2rem 0;border-radius:12px;overflow:hidden;border:1px solid #d4c5b0;box-shadow:0 4px 20px rgba(0,0,0,0.08)">
+        <img src="irol-sme-review.png" alt="SME review comments on AI-drafted dialogue, showing content revisions and accuracy corrections" style="width:100%;height:auto;display:block">
+      </div>
+      <p style="font-size:0.85rem;color:#888;text-align:center;margin-bottom:2rem">AI-drafted dialogue going through SME review. Daniel's comments drove content revisions and accuracy corrections.</p>
       <h2>Results</h2>
       <p>The complete 5-module course is currently in development, with approximately 95 minutes of learner time planned across knowledge building and simulation assessment. Target metrics: 95% accuracy on compliance classification, first-attempt IROL acceptance, and zero missed reporting deadlines post-training.</p>
     </div>
